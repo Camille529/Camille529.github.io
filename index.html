@@ -5,6 +5,7 @@
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Camille Mahamed's Portfolio</title>
+        <link rel="shortcut icon" type="img/jpg" href="images/computer_video.mp4">
         <link rel="stylesheet" type="text/css" href="portfolio_guide_.css">
     </head>
 
@@ -13,16 +14,17 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--New Section Added-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
-            <a href="#Contact">Contact</a>
+            <a href="#GitHub">GitHub</a>
+        <!--Onclick and onblclick functions added to open and close the contact form-->
+        <a onclick="openForm()" onblclick="closeForm()" class="contact">Contact</a>
         </div>
-        <!--Breaks inserted to add space between navbar and the first heading-->
-        <br>
-        <br>
         <!--Background video-->
         <div id="Home">
             <video autoplay muted loop id="Apple_Computer">
-                <source src="computer_video.mp4" type="video/mp4">
+                <source src="images/computer_video.mp4" type="video/mp4">
                 <!--Display message if video fails to run-->
                 Your browser does not support HTML5 video.
             </video>
@@ -31,7 +33,7 @@
         <div class="Video_Text">
             <h1 class="white-text">Camille Mahamed's Portfolio</h1>
             <strong>
-                <p class="center">
+                <p class="center quote">
                     <q>
                         Fortune favors the prepared mind.
                     </q>
@@ -39,15 +41,74 @@
                     -Louis Pasteur
                     <br>
                     <br>
-                    My name is Camille Mahamed and welcome to my portfolio website! On it, I will tell you about my background and experience.
+                    My name is Camille Mahamed and welcome to my portfolio website!
+                    <br>
+                    <br>
+                    On it, I will tell you about my background and experience.
+                    <br>
+                    <br>
+                    <br>
+                    Thank you for checking out my portfolio and enjoy!
                 </p>
             </strong>
         </div>
+        <!-- Slideshow section added -->
+        <div id="Slideshow">
+            <div id="Slideshow_Background"> 
+                <div id="Slideshow_Container">
+                    <!-- Slide 1 of 6 -->
+                    <div class="mySlides fade" style="display: block;">
+                        <img class="Slideshow_Images" src="images/profile.JPG" alt="Picture of yourself">
+                        <div class="text">I'm available to assist you!</div>
+                    </div>
+                    <!-- Slide 2 of 6 -->
+                    <div class="mySlides fade" style="display: none;">
+                        <img class="Slideshow_Images" src="images/cybersecurity.jpg" alt="HTML, CSS, and JS logos"> 
+                        <div class="text">I am a CyberSecurity professional,<br> trained in:<br>HTML, CSS, and JavaScript.</div>
+                    </div>
+                    <!-- Slide 3 of 6 -->
+                    <div class="mySlides fade" style="display: none;">
+                        <img class="Slideshow_Images" src="images/html_.png" alt="Python logo">
+                        <div class="text">HTML</div>
+                    </div>
+                    <!-- Slide 4 of 6 -->
+                    <div class="mySlides fade" style="display: none;">
+                        <img class="Slideshow_Images" src="images/css.png" alt="C# logo">
+                        <div class="text">CSS</div>
+                    </div>
+                    <!-- Slide 5 of 6 -->
+                    <div class="mySlides fade" style="display: none;">
+                        <img class="Slideshow_Images" src="images/javascript_.jpg" alt="SQL logo"> 
+                        <div class="text">JavaScript</div>
+                    </div>
+                    <!-- Slide 6 of 6 -->
+                    <div class="mySlides fade" style="display: none;">
+                        <img class="Slideshow_Images" src="images/portfolio_email.png" alt="Replace with a picture of your choosing"> 
+                        <div class="text"><a class="white-text" onclick="openForm()" href="#Contact">Contact me now!</a></div> 
+                    </div>
+                    <!-- Previous and next buttons -->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds a space between the slideshow images and the dots -->
+
+                <!-- Slideshow dots (these are another way for users to navigate through the slideshow) -->
+                <div style="text-align: center">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span> 
+                    <span class="dot" onclick="currentSlide(5)"></span> 
+                    <span class="dot" onclick="currentSlide(6)"></span> 
+                </div>
+            </div>
+        </div>
+
         <!--About section-->
         <div class="Row" id="About">
             <!--Left column-->
             <div class="Column_2">
-                <img src="Images/portfolio_about.jpg" alt="Desktop background">
+                <img src="images/portfolio_about.jpg" alt="Desktop background">
             </div>
             <!--Right column-->
             <div class="Column_1">
@@ -63,7 +124,9 @@
                     <br>
                     I am a new and upcoming Cybersecurity teammember and would love to work with you on your team!
                     <a href="#Contact">Contact</a>
-                    me below!
+                    me below or checkout my LinkedIn profile!
+                    <a href="https://www.linkedin.com/in/camillemahamed" target="_blank">My LinkedIn Profile</a>
+
                 </p>
             </div>
         </div>
@@ -84,47 +147,53 @@
             <!--Right column-->
             <div class="Column_2">
                 <a href="https://github.com/Camille529" target="_blank">
-                    <img src="Images/portfolio_github.png" alt="GitHub Logo">
+                    <img src="images/portfolio_github.png" alt="GitHub Logo">
                 </a>
             </div>
         </div>
-        <!--Contact section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="Images/portfolio_email.png" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
+        <!--Contact form-->
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+            <div class="form-popup" id="myForm" ondblclick="closeForm()">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
+                <!--Here we are using a free online service to send our contact form to an email address of our choosing - 
+                    note: it will not run unless live on the internet, you have to push it to your online website first-->
                 <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="https://formspree.io/f/mrgolqyv" method="POST">
-                    <lable>Name:</lable>
-                    <input type="text" placeholder="Please enter your name here" fdprocessedid="avmahk">
-                    <lable>Email</lable>
-                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here" fdprocessedid="z896ra">
-                    <label>Message:</label>
-                    <input type="text" id="Message" name="Message" placeholder="Please write your message here" fdprocessedid="4ysalc">
-                    <input type="submit" value="SUBMIT" fdprocessedid="759x4r">
+                <label for="name">
+                    <b>Name</b>
+                </label>
+                <input type="text" placeholder="Type your name here" name="name" required>
+                <label for="phone">
+                    <b>Phone</b>
+                </label>
+                <input type="text" placeholder="Type your phone number here" name="phone">
+                <label for="email">
+                    <b>Email</b>
+                </label>
+                <input type="text" placeholder="Type your email address here" name="email" required>
+                <label for="message">
+                    <b>Message</b>
+                </label>
+                <input type="text" placeholder="Type your message here" name="message">
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
             </div>
         </div>
+
         <!--Footer section-->
         <footer>
-            <p> </p>
             <p class="center">
                 &copy; Prosper Consulting Inc.
                 <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a>
             </p>
             <br>
-            <p> </p>
         </footer>
+        <script src="portfolio.js"></script>
         <script>
             'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfq && (window._trfd = []),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh'},{'server':'a2plcpn10302'},{'dcenter':'a2'},{'cp_id':'6828831'},{'cp_cache':''},{'cp_cl':'6'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.//
         </script>
-        <script src="https://img1.wsimg.com/traffic-assets/js/tccl.min.js">
-
-        </script>
+        <script src="https://img1.wsimg.com/traffic-assets/js/tccl.min.js"></script>
 
     </body>
 </html>
