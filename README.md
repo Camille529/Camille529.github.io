@@ -1,2 +1,8 @@
 # Camille529.github.io
-This is where you can see my portfolio and projects I have done.
+# JavaScript Projects:
+This is where you can see my portfolio.
+
+## Projects
+* Portfolio Website
+This project was to showcase what I have done and give contact information. 
+
